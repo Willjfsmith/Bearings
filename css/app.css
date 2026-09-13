@@ -290,3 +290,17 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .mem .more p:first-child{margin-top:5px;padding-top:5px;border-top:1px solid var(--line)}
 .pmeta .wl{white-space:nowrap}
 .pres .actbar{margin-top:6px}
+
+/* v16: site frame, short screens */
+body{background:var(--bg2)}
+.app,.toast{background:var(--bg)}
+.app{min-height:100dvh}
+@media (min-width:560px){.app{border-inline:1px solid var(--line);box-shadow:0 0 40px rgba(0,0,0,.05)}}
+.mapscreen{max-width:520px;margin:0 auto}
+@media (min-width:560px){.mapscreen{border-inline:1px solid var(--line)}}
+@media (max-height:730px){
+  .flag.pflag{width:74px}.pmeta .answer{font-size:21px}
+  .map.r52{aspect-ratio:5/1.8}
+  .pres .mem p{font-size:15px}.pres .mem{margin-top:6px;padding:5px 0 0}
+  .brand h1{font-size:32px}
+}
