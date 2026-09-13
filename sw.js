@@ -1,8 +1,8 @@
-const V='bearings-v11';
+const V='bearings-v13';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
-  './css/app.css?v=11','./js/app.js?v=11',
-  './js/data/world.js?v=11','./js/data/states.js?v=11','./js/data/cities.js?v=11','./js/data/features.js?v=11',
-  './js/data/landmarks.js?v=11','./js/data/maps.js?v=11','./js/data/capitals.js?v=11','./js/data/lib.js?v=11','./js/data/sets.js?v=11'];
+  './css/app.css?v=13','./js/app.js?v=13',
+  './js/data/world.js?v=13','./js/data/states.js?v=13','./js/data/cities.js?v=13','./js/data/features.js?v=13',
+  './js/data/landmarks.js?v=13','./js/data/maps.js?v=13','./js/data/capitals.js?v=13','./js/data/lib.js?v=13','./js/data/sets.js?v=13'];
 const REMOTE={'flagcdn.com':'flags','fonts.googleapis.com':'fonts','fonts.gstatic.com':'fonts'};
 self.addEventListener('install',e=>{ e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!=='flags'&&k!=='fonts').map(k=>caches.delete(k))))); self.clients.claim(); });
