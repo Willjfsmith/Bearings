@@ -1,13 +1,13 @@
 :root{
   --bg:#F4F1EA; --bg2:#ECE8DF; --line:rgba(24,22,19,.14); --rule:#181613;
   --ink:#181613; --ink2:#7B766D; --acc:#D2471F; --acc2:#2E5E8C; --ok:#2C7A47; --no:#D2471F;
-  --sea:#E6E2D8; --land:#C2BBAC; --hit:#E3A21B;
+  --sea:#E2E7E6; --land:#CBC3B1; --grat:rgba(24,22,19,.08); --hit:#E3A21B;
   --serif:'Newsreader','Iowan Old Style','Charter','Palatino','Palatino Linotype','Book Antiqua',Georgia,serif;
   --mono:ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
   --sans:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#161513;--bg2:#1F1D1A;--line:rgba(240,236,228,.16);--rule:#F0ECE4;--ink:#F0ECE4;--ink2:#9A948A;--acc:#F0653A;--acc2:#8DB3DC;--ok:#69BE87;--no:#F0653A;--sea:#1C1B18;--land:#4B4740;--hit:#E3A21B}
+  :root{--bg:#161513;--bg2:#1F1D1A;--line:rgba(240,236,228,.16);--rule:#F0ECE4;--ink:#F0ECE4;--ink2:#9A948A;--acc:#F0653A;--acc2:#8DB3DC;--ok:#69BE87;--no:#F0653A;--sea:#121618;--land:#4C4840;--grat:rgba(240,236,228,.08);--hit:#E3A21B}
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
@@ -167,7 +167,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .map.sat path.halo{stroke:#fff!important;fill:none!important}.map.sat path.target{fill:rgba(224,165,39,.45)!important;stroke:var(--hit)!important}
 .map path.halo{fill:none}.map.sat path.miss{fill:rgba(210,71,31,.55)!important}
 .tapmap.sat path.tap{pointer-events:all}
-.map.sat rect{fill:#0b1a2a}
+.map.sat rect.sea{fill:#0b1a2a}.map.sat rect.grat{display:none}
 .zb.on{background:var(--ink);color:var(--bg)}
 .pinwrap.static{touch-action:auto}.pinwrap.static .zoomctl{top:auto;bottom:10px;right:8px}.pinwrap.static .zb{width:28px;height:28px;font-size:14px;opacity:.85}
 .wl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);text-decoration:none}
@@ -175,7 +175,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .mapscreen{position:fixed;inset:0;z-index:20;background:var(--bg)}
 .mapscreen .pinwrap{position:absolute;inset:0;width:100%;margin:0}
 .mapscreen .pinmap,.mapscreen .tapmap{width:100%;height:100%;aspect-ratio:auto;border-radius:0;outline:none}
-.mapscreen .zoomctl{top:auto;bottom:calc(96px + env(safe-area-inset-bottom));right:10px}
+.mapscreen .zoomctl{top:auto;flex-direction:row;left:12px;right:auto;bottom:calc(100px + env(safe-area-inset-bottom))}
 .mapscreen .ov{position:absolute;left:0;right:0;padding:10px 16px;pointer-events:none}
 .mapscreen .ov > *{pointer-events:auto}
 .mapscreen .ov.top{top:0;padding-top:calc(10px + env(safe-area-inset-top));background:linear-gradient(var(--bg) 55%,rgba(0,0,0,0))}
@@ -185,7 +185,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .flag.thumb{width:72px;flex:none;box-shadow:none}
 .flag.thumb .emo{font-size:36px}
 /* collections */
-.tabs{gap:0 14px;margin:0 0 4px}.tabs .chip{font-size:13px;letter-spacing:.02em;text-transform:none;font-family:var(--serif);font-size:19px;padding:4px 0}
+.tabs{gap:0 14px;margin:0 0 4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}.tabs::-webkit-scrollbar{display:none}.tabs .chip{flex:none;white-space:nowrap}.tabs .chip{font-size:13px;letter-spacing:.02em;text-transform:none;font-family:var(--serif);font-size:19px;padding:4px 0}
 .shape{width:min(220px,58vw);aspect-ratio:1;display:block}.shape.sm{width:56px}.shaperow{display:flex;justify-content:center;margin:-2px 0}
 .choices.shapes .choice{padding:10px}.shape.opt{width:100%;max-width:120px;margin:0 auto}.shape.opt path{fill:var(--ink)}
 .mini.dot{display:flex;align-items:center;justify-content:center}.mini.dot i{width:10px;height:10px;border-radius:50%;background:var(--acc);display:block}
@@ -205,3 +205,11 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .answer,.game b,.item .nm,.mem p,.welcome{font-optical-sizing:auto}
 .zb{box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .install{border-radius:2px}
+
+/* v11: map graticule, labeled controls, library progress */
+.zb.txt{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.pinwrap.static .zb.txt{font-size:9px}
+.prog{display:flex;gap:2px;flex:none;width:48px}
+.prog i{flex:1;height:5px;background:var(--line);border-radius:1px;display:block}
+.prog i.acc{background:var(--acc)}.prog i.ok{background:var(--ok)}
+.map{outline-color:var(--line)}
