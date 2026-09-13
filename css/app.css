@@ -264,3 +264,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .tile b{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.05;letter-spacing:-.01em}
 .tile span:not(.art){font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink2);line-height:1.35}
 @media (prefers-color-scheme:dark){.hero-map .hland path{stroke:rgba(0,0,0,.35)}}
+
+/* v14: composited map gestures */
+.mapscreen .pinmap,.mapscreen .tapmap{will-change:transform;transform-origin:50% 50%}
+.pinwrap{overflow:hidden}
