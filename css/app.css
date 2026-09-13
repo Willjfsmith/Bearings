@@ -217,19 +217,19 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 /* v12: one-screen learn card */
 .present{padding:2px 0 0}
 .phead{display:flex;gap:12px;align-items:center}
-.flag.pflag{width:116px;flex:none}.flag.pflag .emo{font-size:52px}
+.flag.pflag{width:86px;flex:none}.flag.pflag .emo{font-size:42px}
 .pmeta{flex:1;min-width:0}
-.pmeta .answer{text-align:left;font-size:26px;line-height:1.02;text-wrap:balance}
-.pmeta .prompt{margin-top:5px;font-size:9.5px;letter-spacing:.14em;line-height:1.35;white-space:normal}
+.pmeta .answer{text-align:left;font-size:24px;line-height:1.02;text-wrap:balance}
+.pmeta .prompt{margin-top:3px;font-size:9.5px;letter-spacing:.12em;line-height:1.3;white-space:normal}
 .shape.xs{width:46px;flex:none;margin:0}.shape.xs path{fill:var(--ink)}
-.present .map{margin-top:10px}.map.r21{aspect-ratio:2/1}
+.present .map{margin-top:8px}.map.r21{aspect-ratio:2/1}.map.r52{aspect-ratio:5/2}
 .present .pfoot{margin-top:6px;text-align:center}
-.photo.pflag{width:116px;aspect-ratio:3/2;flex:none}
-.pres .mem{margin-top:10px;padding:8px 0 0}
-.pres .mem .lbl{margin-bottom:5px}
-.pres .mem p{font-size:17px;line-height:1.25}
+.photo.pflag{width:92px;aspect-ratio:3/2;flex:none}
+.pres .mem{margin-top:8px;padding:6px 0 0}
+.pres .mem .lbl{margin-bottom:3px}
+.pres .mem p{font-size:16px;line-height:1.25}
 .pres .mem p+p{margin-top:5px;padding-top:5px}
-.pres .mem .fact{margin-top:6px;padding-top:6px;font-size:13px;line-height:1.4}
+.pres .mem .fact{margin-top:4px;padding-top:4px;font-size:12.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}.pres .mem .fact.open{-webkit-line-clamp:unset}
 .pres .mem img{max-height:120px;width:auto}
 .pres + .actbar,.actbar{margin-top:12px;padding-top:8px}
 
@@ -284,3 +284,9 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .fb .flagbox .flag.sm{width:104px;flex:none}
 .fb .flagbox .pinwrap,.fb .flagbox .map{flex:1;min-width:0;margin:0}
 .fb .flagbox .answer{flex:none}
+.pinwrap.static .zb{width:26px;height:26px}
+.pres .actbar{margin-top:8px}
+.mem .morelink{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-top:5px;text-decoration:underline;text-underline-offset:3px;padding:2px 0}
+.mem .more p:first-child{margin-top:5px;padding-top:5px;border-top:1px solid var(--line)}
+.pmeta .wl{white-space:nowrap}
+.pres .actbar{margin-top:6px}
