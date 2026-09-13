@@ -1,8 +1,8 @@
-const V='bearings-v14';
+const V='bearings-v15';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
-  './css/app.css?v=14','./js/app.js?v=14',
-  './js/data/world.js?v=14','./js/data/states.js?v=14','./js/data/cities.js?v=14','./js/data/features.js?v=14',
-  './js/data/landmarks.js?v=14','./js/data/maps.js?v=14','./js/data/capitals.js?v=14','./js/data/lib.js?v=14','./js/data/sets.js?v=14'];
+  './css/app.css?v=15','./js/app.js?v=15',
+  './js/data/world.js?v=15','./js/data/states.js?v=15','./js/data/cities.js?v=15','./js/data/features.js?v=15',
+  './js/data/landmarks.js?v=15','./js/data/maps.js?v=15','./js/data/capitals.js?v=15','./js/data/lib.js?v=15','./js/data/sets.js?v=15'];
 const REMOTE={'flagcdn.com':'flags','fonts.googleapis.com':'fonts','fonts.gstatic.com':'fonts','gibs.earthdata.nasa.gov':'sat','eoimages.gsfc.nasa.gov':'sat'};
 self.addEventListener('install',e=>{ e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!=='flags'&&k!=='fonts'&&k!=='sat').map(k=>caches.delete(k))))); self.clients.claim(); });

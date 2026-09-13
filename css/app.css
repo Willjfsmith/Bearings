@@ -82,7 +82,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .rdots{display:flex;gap:5px;margin:-12px 0 16px;flex-wrap:wrap}.rdots i{width:6px;height:6px;border-radius:50%;background:var(--line)}.rdots i.ok{background:var(--ok)}.rdots i.mid{background:var(--hit)}.rdots i.no{background:var(--no)}
 .done .rdots{justify-content:center;margin:12px 0 16px}
 .flagbox{background:none;border:0;border-radius:0;padding:4px 0;display:flex;flex-direction:column;align-items:center;gap:10px}
-.flag{width:min(300px,84vw);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;border-radius:0;overflow:hidden;background:var(--bg2);outline:1px solid var(--line);outline-offset:-1px}
+.flag{width:min(210px,58vw);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;border-radius:0;overflow:hidden;background:var(--bg2);outline:1px solid var(--line);outline-offset:-1px}
 .flag img{width:100%;height:100%;object-fit:cover;display:block}
 .capcard{text-align:center;padding:30px 10px 6px}
 .capcard .prompt{margin:0 0 10px}
@@ -90,16 +90,16 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .flagbox .map,.flagbox .pinwrap{width:100%;margin:6px 0 0}
 .tapmap{touch-action:none;user-select:none}.tapmap path.tap{fill:var(--land)}.tapmap.live path.tap{cursor:pointer}@media(hover:hover){.tapmap.live path.tap:hover{fill:#A8A08F}}.tapmap path.hit{fill:var(--hit)}.tapmap path.miss{fill:var(--no)}
 .tapmap circle.tapring{fill:rgba(210,71,31,.10);stroke:rgba(210,71,31,.7);pointer-events:none}.tapmap circle.hit{stroke:var(--hit);fill:rgba(227,162,27,.55)}.tapmap circle.miss{stroke:var(--no);fill:rgba(210,71,31,.5)}
-.choices.flags .choice{padding:8px}.choices.flags .choice::before{display:none}.flag.opt{width:100%;outline:none;background:transparent}.flag.opt .emo{font-size:56px}
+.choices.flags .choice{padding:8px}.choices.flags .choice::before{display:none}.flag.opt{width:100%;max-width:140px;outline:none;background:transparent}.flag.opt .emo{font-size:48px}
 .pinwrap{position:relative;width:100%;touch-action:none;overscroll-behavior:contain}.pinmap,.tapmap{touch-action:none;aspect-ratio:5/4;}.pinmap.wide,.tapmap.wide{aspect-ratio:5/3}.pinmap,.tapmap{user-select:none;border-radius:0;outline:1px solid var(--line);outline-offset:-1px}.pinmap{cursor:crosshair}
 .zoomctl{position:absolute;right:8px;top:14px;display:flex;flex-direction:column;gap:6px}.zb{width:34px;height:34px;border-radius:2px;background:var(--bg);color:var(--ink);font-size:18px;border:1px solid var(--rule);font-family:var(--mono)}
 .rounds{margin:16px auto 6px;max-width:340px;text-align:left;font-size:12px}.rounds div{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}.rounds div span:first-child{flex:1;font-family:var(--sans);font-size:15px}.rounds div b{min-width:52px;text-align:right;font-weight:500}
-.flag.sm{width:min(180px,50vw)}
-.flag .emo{font-size:120px;line-height:1}
+.flag.sm{width:min(150px,42vw)}
+.flag .emo{font-size:96px;line-height:1}
 .prompt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin-top:8px}
 .answer{font-family:var(--serif);font-size:34px;text-align:center;line-height:1;letter-spacing:-.015em}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px;counter-reset:opt}
-.choice{position:relative;padding:22px 12px 14px;border-radius:2px;background:none;border:1px solid var(--rule);font-size:16px;text-align:center;line-height:1.2;min-height:70px;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;counter-reset:opt}
+.choice{position:relative;padding:20px 10px 12px;border-radius:2px;background:none;border:1px solid var(--rule);font-size:16px;text-align:center;line-height:1.2;min-height:60px;display:flex;align-items:center;justify-content:center;transition:background .15s}
 .choice::before{counter-increment:opt;content:counter(opt,decimal-leading-zero);position:absolute;top:6px;left:8px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink2)}
 .choice.right{background:var(--ok);border-color:var(--ok);color:#fff}.choice.right::before{color:rgba(255,255,255,.7)}
 .choice.wrong{background:var(--no);border-color:var(--no);color:#fff}.choice.wrong::before{color:rgba(255,255,255,.7)}
@@ -109,7 +109,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .type input::placeholder{color:var(--ink2);opacity:.6}
 .type input.right{border-color:var(--ok)} .type input.wrong{border-color:var(--no)}
 .dk{display:block;margin:12px auto 0;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);text-decoration:underline;text-underline-offset:4px;padding:8px}
-.verdict{margin-top:18px;font-family:var(--serif);font-size:28px;text-align:center;line-height:1.1}
+.verdict{margin-top:12px;font-family:var(--serif);font-size:24px;text-align:center;line-height:1.1}
 .verdict.ok{color:var(--ok)} .verdict.no{color:var(--no)}
 .actbar{position:sticky;bottom:0;margin:18px -4px 0;padding:10px 4px calc(10px + env(safe-area-inset-bottom));background:var(--bg)}
 .actbar .btn+.btn{margin-top:8px}
@@ -268,3 +268,19 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 /* v14: composited map gestures */
 .mapscreen .pinmap,.mapscreen .tapmap{will-change:transform;transform-origin:50% 50%}
 .pinwrap{overflow:hidden}
+
+/* v15: one-screen questions */
+.flagbox{gap:8px}
+.capcard{padding:18px 10px 4px}
+.shape{width:min(170px,46vw)}
+.fb .mem{margin-top:8px;padding:8px 0 0}.fb .mem p{font-size:17px;line-height:1.25}.fb .mem .fact{font-size:13px;margin-top:6px;padding-top:6px}
+.fb .flagbox{gap:6px}
+.choices.answered{grid-template-columns:repeat(4,1fr);gap:6px}
+.choices.answered .choice{min-height:44px;padding:14px 4px 8px;font-size:12px;line-height:1.15}
+.choices.answered .choice::before{top:3px;left:5px;font-size:8px}
+.choices.answered.flags .choice{padding:4px}.choices.answered .flag.opt .emo{font-size:26px}
+.choices.answered.shapes .shape.opt{max-width:56px}
+.fb .flagbox{flex-direction:row;align-items:center;gap:10px}
+.fb .flagbox .flag.sm{width:104px;flex:none}
+.fb .flagbox .pinwrap,.fb .flagbox .map{flex:1;min-width:0;margin:0}
+.fb .flagbox .answer{flex:none}
