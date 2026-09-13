@@ -1,11 +1,11 @@
-const V='bearings-v13';
+const V='bearings-v14';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
-  './css/app.css?v=13','./js/app.js?v=13',
-  './js/data/world.js?v=13','./js/data/states.js?v=13','./js/data/cities.js?v=13','./js/data/features.js?v=13',
-  './js/data/landmarks.js?v=13','./js/data/maps.js?v=13','./js/data/capitals.js?v=13','./js/data/lib.js?v=13','./js/data/sets.js?v=13'];
-const REMOTE={'flagcdn.com':'flags','fonts.googleapis.com':'fonts','fonts.gstatic.com':'fonts'};
+  './css/app.css?v=14','./js/app.js?v=14',
+  './js/data/world.js?v=14','./js/data/states.js?v=14','./js/data/cities.js?v=14','./js/data/features.js?v=14',
+  './js/data/landmarks.js?v=14','./js/data/maps.js?v=14','./js/data/capitals.js?v=14','./js/data/lib.js?v=14','./js/data/sets.js?v=14'];
+const REMOTE={'flagcdn.com':'flags','fonts.googleapis.com':'fonts','fonts.gstatic.com':'fonts','gibs.earthdata.nasa.gov':'sat','eoimages.gsfc.nasa.gov':'sat'};
 self.addEventListener('install',e=>{ e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL))); self.skipWaiting(); });
-self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!=='flags'&&k!=='fonts').map(k=>caches.delete(k))))); self.clients.claim(); });
+self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k!=='flags'&&k!=='fonts'&&k!=='sat').map(k=>caches.delete(k))))); self.clients.claim(); });
 self.addEventListener('fetch',e=>{
   const u=new URL(e.request.url);
   const bucket=REMOTE[u.hostname];
