@@ -77,7 +77,7 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 /* session */
 .topbar{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
 .topbar a{color:var(--ink);text-decoration:none}
-.bar{height:1px;background:var(--line);overflow:hidden;margin:10px 0 22px}
+.bar{height:1px;background:var(--line);overflow:hidden;margin:8px 0 14px}
 .bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
 .rdots{display:flex;gap:5px;margin:-12px 0 16px;flex-wrap:wrap}.rdots i{width:6px;height:6px;border-radius:50%;background:var(--line)}.rdots i.ok{background:var(--ok)}.rdots i.mid{background:var(--hit)}.rdots i.no{background:var(--no)}
 .done .rdots{justify-content:center;margin:12px 0 16px}
@@ -213,3 +213,22 @@ details.data summary{cursor:pointer;color:var(--ink2);font-size:10px;letter-spac
 .prog i{flex:1;height:5px;background:var(--line);border-radius:1px;display:block}
 .prog i.acc{background:var(--acc)}.prog i.ok{background:var(--ok)}
 .map{outline-color:var(--line)}
+
+/* v12: one-screen learn card */
+.present{padding:2px 0 0}
+.phead{display:flex;gap:12px;align-items:center}
+.flag.pflag{width:116px;flex:none}.flag.pflag .emo{font-size:52px}
+.pmeta{flex:1;min-width:0}
+.pmeta .answer{text-align:left;font-size:26px;line-height:1.02;text-wrap:balance}
+.pmeta .prompt{margin-top:5px;font-size:9.5px;letter-spacing:.14em;line-height:1.35;white-space:normal}
+.shape.xs{width:46px;flex:none;margin:0}.shape.xs path{fill:var(--ink)}
+.present .map{margin-top:10px}.map.r21{aspect-ratio:2/1}
+.present .pfoot{margin-top:6px;text-align:center}
+.photo.pflag{width:116px;aspect-ratio:3/2;flex:none}
+.pres .mem{margin-top:10px;padding:8px 0 0}
+.pres .mem .lbl{margin-bottom:5px}
+.pres .mem p{font-size:17px;line-height:1.25}
+.pres .mem p+p{margin-top:5px;padding-top:5px}
+.pres .mem .fact{margin-top:6px;padding-top:6px;font-size:13px;line-height:1.4}
+.pres .mem img{max-height:120px;width:auto}
+.pres + .actbar,.actbar{margin-top:12px;padding-top:8px}
